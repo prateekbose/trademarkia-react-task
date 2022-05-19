@@ -1,16 +1,177 @@
-html,
-body {
-  padding: 0;
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  border: none;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+*:focus{
+  outline: none;
 }
 
-* {
-  box-sizing: border-box;
+html{
+  font-size: 10px;
+  font-family: 'Prompt', sans-serif;
+  background-color: #e5e5e57c;
+}
+
+nav{
+  padding: 2.5rem 15rem;
+  height: calc(15vh - 5rem);
+  width: calc(100vw - 30rem);
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+nav img{
+  height: 5rem;
+}
+
+.page{
+  padding: 5rem 0rem 0rem;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  background-color: white;
+}
+
+.page .top-section{
+  padding: 0rem 15rem;
+  height: 10vh;
+  display: flex;
+  background-color: white;
+}
+
+.top-section .top-text-section{
+  width: calc(50vw - 15rem);
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  background-color: white;
+}
+
+.top-section .top-text-section h1{
+  font-size: 5rem;
+  font-weight: 700;
+  color: #7161C5;
+  letter-spacing: 0.1rem;
+}
+
+.top-section .text-input-section{
+  display: flex;
+  gap: 1.5rem;
+}
+
+.top-section .text-input-section input{
+  padding: 1.5rem 2rem 1rem;
+  height: 3rem;
+  width: 43rem;
+  font-size: 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(0,0,0,0.25);
+  transition: 0.3s ease-in-out;
+}
+
+.top-section .text-input-section input:focus{
+  border: 1px solid rgba(0,0,0,0.75);
+}
+
+.top-section .text-input-section label{
+  position: absolute;
+  transform: translate(2rem, 1.5rem);
+  font-size: 2rem;
+  transition: 0.3s ease-in-out;
+  color: rgba(0,0,0,0.5);
+}
+
+.top-section .text-input-section .placeholder-active{
+  position: absolute;
+  font-size: 1rem;
+  transform: translate(2rem, 0.5rem);
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.top-section .text-input-section button{
+  width: 25rem;
+  height: 5.5rem;
+  border-radius: 1.5rem;
+  background-color: #7161C5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.075rem;
+  color: white;
+}
+
+.top-section .text-input-section button:hover{
+ background-color: #4F4099;
+ cursor: pointer;
+}
+
+.top-section .text-input-section button:focus{
+  background-color: #3B3077;
+}
+
+.top-section .side-image{
+  width: calc(50vw - 15rem);
+}
+
+.top-section .side-image img{
+  position: absolute;
+  width: 50rem;
+  transform: translate(50%, -20%);
+}
+
+.page .saved-section{
+  padding: 2.5rem 15rem;
+  height: calc(50vh - 5rem);
+  background-color: #e5e5e57c;
+}
+
+.page .saved-section h1{
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+}
+
+.page .saved-section .saved-invoice{
+  width: calc(50vw - 15rem);
+}
+
+.saved-section .saved-invoice .saved-invoice-top{
+  padding: 2rem 2.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1.5rem;
+  border: thin solid rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}
+
+.saved-section .saved-invoice-top button{
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #7161C5;
+  border-radius: 1.5rem;
+  background-color: #f2efff00;
+  transition: 0.3s ease-in-out;
+}
+
+.saved-section .saved-invoice-top button:hover{
+  background-color: #F2EFFF;
+  cursor: pointer;
+}
+
+.saved-section .saved-invoice .invoice-arrow{
+  transition: 0.3s ease-in-out;
+}
+
+.saved-section .saved-invoice .invoice-open{
+  transform: rotate(180deg);
 }
