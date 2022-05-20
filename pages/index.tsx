@@ -1,20 +1,10 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import { useState } from 'react'
 import { ChevronDown } from 'react-feather'
 import { Invoice } from './Components/invoice'
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch('https://fakestoreapi.com/products')
-  const data = await res.json()
-  
-  return {
-    props: { data }
-  }
-}
-
-const Home: NextPage = (data:Object) => {
+const Home: NextPage = () => {
   
   const [inputActive, setInputActive] = useState(false)
   const [inputValue, setInputValue] = useState("")
@@ -33,11 +23,6 @@ const Home: NextPage = (data:Object) => {
 
   return (
     <div>
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
-        <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&display=swap" rel="stylesheet"/>
-      </Head>
       <nav>
         <img
           src={"/logo.png"}

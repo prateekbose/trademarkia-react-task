@@ -60,7 +60,7 @@ export const Invoice: FunctionComponent<{}> = () => {
                             <td></td>
                             <td></td>
                             <td>Total</td>
-                            <td>$1999.00</td>
+                            <td>$89.00</td>
                         </tr>
                     </table>
                 </div>
