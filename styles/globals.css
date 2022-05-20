@@ -179,7 +179,6 @@ nav img{
   height: 0;
   opacity: 0;
   width: calc(100% - 3rem);
-  background-color: pink;
   visibility: hidden;
   transition: all 0.3s ease-in-out 0.6s, opacity 0.3s ease-in-out, height 0.3s ease-in-out 0.6s;
   display: flex;
@@ -187,11 +186,25 @@ nav img{
   gap: 2rem;
 }
 
+.saved-section .invoice-body-open{
+  transition: 0.3s ease-in-out 0.3s;
+  opacity: 1;
+  height: auto;
+  visibility: visible;
+  margin: 0rem 0rem 1.5rem;
+}
+
+.invoice{
+  background-color: white;
+  filter: drop-shadow(0 0 25px #5F5F5E40);
+}
+
 .invoice .invoice-head{
   padding: 40px 45px;
   display: flex;
   justify-content: space-between;
   border-top: 10px solid #7161C5;
+  background-color: #F9F8FF;
 }
 
 .invoice .invoice-head .logo{
@@ -210,11 +223,83 @@ nav img{
   text-align: right;
 }
 
-.saved-section .invoice-body-open{
-  transition: 0.3s ease-in-out 0.3s;
-  opacity: 1;
-  height: auto;
-  visibility: visible;
-  margin: 0rem 0rem 1.5rem;
+.invoice-head .company-details h2{
+  font-weight: 600;
 }
 
+.invoice .invoice-summary{
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.invoice .invoice-summary .invoice-summary-top{
+  display: flex;
+  justify-content: space-between;
+}
+
+.invoice .invoice-summary .invoice-amount{
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.invoice-summary .invoice-amount h1{
+  color: #7161C5;
+}
+
+.invoice-summary-content{
+  margin: 15px 0px;
+  padding: 10px;
+  border: thin solid #ACA5D6;
+  border-radius: 10px;
+}
+
+.invoice-summary-content table{
+  width: 100%;
+}
+
+.invoice-summary-content table tr{
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr;
+  text-align: center;
+  padding: 20px 5px;
+  border-radius: 10px;
+}
+
+.invoice-summary-content table th:first-of-type, .invoice-summary-content table td:first-of-type{
+  text-align: left;
+}
+
+.invoice-summary-content table th:last-of-type, .invoice-summary-content table td:last-of-type{
+  text-align: right;
+}
+
+.invoice-summary-content table tr:nth-of-type(odd){
+  background-color: #F9F8FF;
+}
+
+.invoice-summary-content table tr:first-of-type{
+  padding: 0px 0px 10px;
+  background-color: white;
+  border-bottom: thin solid #DFDCF3;
+  border-radius: 0px;
+}
+
+.invoice-summary-content table tr:last-of-type{
+  background-color: white;
+  border-top: thin solid #DFDCF3;
+  border-radius: 0px;
+}
+
+.invoice-summary-content table th{
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  color: #7161C5;
+}
+
+.invoice-summary-content table td{
+  font-size: 12px;
+  letter-spacing: 0.25px;
+  font-weight: 600;
+}
