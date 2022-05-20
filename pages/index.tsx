@@ -2,9 +2,18 @@ import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
 import { ChevronDown } from 'react-feather'
-import { Invoice } from './Components/invoice'
+import { Invoice } from '../Components/invoice'
 
-const Home: NextPage = () => {
+export const getServerSideProps: GetServerSideProps = async () => {
+  const res = await fetch('https://fakestoreapi.com/products')
+  const data = await res.json()
+  
+  return {
+    props: { data }
+  }
+}
+
+const Home: NextPage = (data:Object) => {
   
   const [inputActive, setInputActive] = useState(false)
   const [inputValue, setInputValue] = useState("")
