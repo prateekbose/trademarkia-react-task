@@ -1,6 +1,7 @@
 import { GetServerSideProps, NextPage } from "next"
 import { Eye, Edit2 } from 'react-feather'
 import { useState } from 'react'
+import { useRouter } from "next/router"
 
 interface Response {
     id: number
@@ -25,6 +26,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 const GeneratePage: NextPage<Props> = (data: Props) => {
 
+    const Router = useRouter()
+    const {name} = Router.query
+
     const [modeIndex, setModeIndex] = useState(0)
 
     return (
@@ -37,7 +41,7 @@ const GeneratePage: NextPage<Props> = (data: Props) => {
             </nav>
             <section className="generate-section">
                 <div className="generate-head">
-                    <h1>Invoice1</h1>
+                    <h1>{(name)?name:'Invoice1'}</h1>
                     <div className="generate-mode">
                         <button className={`${modeIndex == 0?'active':''}`} onClick={() => setModeIndex(0)}><Eye/> Preview</button>
                         <button className={`${modeIndex == 1?'active':''}`} onClick={() => setModeIndex(1)}><Edit2/> Edit</button>

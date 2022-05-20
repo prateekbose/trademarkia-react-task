@@ -33,7 +33,12 @@ const Home: NextPage = (data:Object) => {
   }
 
   const generateInvoice = (name: string) => {
-    Router.push(`/generate?name=${name}`, undefined, {shallow: false})
+    Router.push({
+      pathname: '/generate',
+      query: {
+        name: name
+      }
+    })
   }
 
   return (
