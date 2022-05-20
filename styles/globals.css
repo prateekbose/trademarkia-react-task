@@ -45,6 +45,7 @@ nav h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-bottom: medium solid #E2E2E2;
 }
 
 .generate-head h1{
@@ -58,11 +59,32 @@ nav h1{
 
 .generate-head .generate-mode{
   display: flex;
-  gap: 2rem;
 }
 
-.generate-head .generate-mode{
-  
+.generate-head .generate-mode button{
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  background-color: white;
+  color: #9E9E9E;
+  border-bottom: medium solid rgba(96, 76, 197, 0);
+  transition: 0.3s ease-in-out;
+}
+
+.generate-head .generate-mode button:hover{
+  color: #7161C5;
+  cursor: pointer;
+}
+
+.generate-head .generate-mode .active{
+  color: #7161C5;
+  border-bottom: medium solid rgba(96, 76, 197, 1);
+}
+
+.generate-head .generate-mode button svg{
+  height: 2rem;
 }
 
 .page{
