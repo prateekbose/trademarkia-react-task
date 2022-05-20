@@ -20,10 +20,49 @@ nav{
   width: calc(100vw - 30rem);
   display: flex;
   align-items: center;
+  gap: 1.5rem;
+}
+
+.generate nav{
+  background-color: white;
+  filter: drop-shadow(0 0 10px #BDBDBD40);
 }
 
 nav img{
   height: 5rem;
+}
+
+nav h1{
+  font-size: 3rem;
+  font-weight: 600;
+  color: #7161C5;
+}
+
+.generate-head{
+  padding: 2rem 0rem 0rem;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.generate-head h1{
+  font-size: 2.25rem;
+  letter-spacing: 0.05rem;
+}
+
+.generate-head svg{
+  height: 2rem;
+}
+
+.generate-head .generate-mode{
+  display: flex;
+  gap: 2rem;
+}
+
+.generate-head .generate-mode{
+  
 }
 
 .page{
