@@ -11,7 +11,7 @@
 html{
   font-size: 10px;
   font-family: 'Prompt', sans-serif;
-  background-color: #e5e5e57c;
+  overflow-x: hidden;
 }
 
 nav{
@@ -20,7 +20,6 @@ nav{
   width: calc(100vw - 30rem);
   display: flex;
   align-items: center;
-  background-color: white;
 }
 
 nav img{
@@ -31,14 +30,12 @@ nav img{
   padding: 5rem 0rem 0rem;
   display: grid;
   grid-template-rows: 1fr 2fr;
-  background-color: white;
 }
 
 .page .top-section{
   padding: 0rem 15rem;
   height: 10vh;
   display: flex;
-  background-color: white;
 }
 
 .top-section .top-text-section{
@@ -46,7 +43,6 @@ nav img{
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  background-color: white;
 }
 
 .top-section .top-text-section h1{
@@ -127,7 +123,6 @@ nav img{
 .page .saved-section{
   padding: 2.5rem 15rem;
   height: calc(50vh - 5rem);
-  background-color: #e5e5e57c;
 }
 
 .page .saved-section h1{
@@ -137,16 +132,20 @@ nav img{
 }
 
 .page .saved-section .saved-invoice{
+  margin: 1rem 0rem;
+  padding: 2rem 2.75rem 0.5rem;
   width: calc(50vw - 15rem);
+  border-radius: 1.5rem;
+  border: thin solid rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .saved-section .saved-invoice .saved-invoice-top{
-  padding: 2rem 2.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 1.5rem;
-  border: thin solid rgba(0, 0, 0, 0.5);
   transition: 0.3s ease-in-out;
 }
 
@@ -175,3 +174,47 @@ nav img{
 .saved-section .saved-invoice .invoice-open{
   transform: rotate(180deg);
 }
+
+.saved-section .saved-invoice-body{
+  height: 0;
+  opacity: 0;
+  width: calc(100% - 3rem);
+  background-color: pink;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out 0.6s, opacity 0.3s ease-in-out, height 0.3s ease-in-out 0.6s;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.invoice .invoice-head{
+  padding: 40px 45px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 10px solid #7161C5;
+}
+
+.invoice .invoice-head .logo{
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  color: #7161C5;
+}
+
+.invoice .invoice-head .logo img{
+  height: 30px;
+}
+
+.invoice .invoice-head .company-details{
+  text-align: right;
+}
+
+.saved-section .invoice-body-open{
+  transition: 0.3s ease-in-out 0.3s;
+  opacity: 1;
+  height: auto;
+  visibility: visible;
+  margin: 0rem 0rem 1.5rem;
+}
+

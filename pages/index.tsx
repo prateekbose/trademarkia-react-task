@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
 import { ChevronDown } from 'react-feather'
+import { Invoice } from './Components/invoice'
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch('https://fakestoreapi.com/products')
@@ -66,10 +67,22 @@ const Home: NextPage = (data:Object) => {
                 <h1>Invoice1</h1>
                 <p>5th May 2021</p>
               </div>
-              <button onClick={() => handleInvoiceButton(1)}>View Invoice <ChevronDown className={`${(invoiceOpen)?'invoice-open':''} invoice-arrow`} /></button>
+              <button onClick={() => handleInvoiceButton(1)}>View Invoice <ChevronDown className={`${(invoiceOpen && invoiceIndex == 1)?'invoice-open':''} invoice-arrow`} /></button>
             </div>
-            <div className="saved-invoice-body">
-
+            <div className={`saved-invoice-body ${(invoiceOpen && invoiceIndex == 1)?'invoice-body-open':''}`}>
+              <Invoice/>
+            </div>
+          </div>
+          <div className="saved-invoice">
+            <div className="saved-invoice-top">
+              <div className="head">
+                <h1>Invoice1</h1>
+                <p>5th May 2021</p>
+              </div>
+              <button onClick={() => handleInvoiceButton(2)}>View Invoice <ChevronDown className={`${(invoiceOpen && invoiceIndex == 2)?'invoice-open':''} invoice-arrow`} /></button>
+            </div>
+            <div className={`saved-invoice-body ${(invoiceOpen && invoiceIndex == 2)?'invoice-body-open':''}`}>
+              <Invoice/>
             </div>
           </div>
         </section>
