@@ -1,5 +1,5 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { ChevronDown } from 'react-feather'
 import { Invoice } from '../Components/invoice'
@@ -15,6 +15,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 const Home: NextPage = (data:Object) => {
   
+  const Router = useRouter()
+
   const [inputActive, setInputActive] = useState(false)
   const [inputValue, setInputValue] = useState("")
   const [invoiceOpen, setInvoiceOpen] = useState(false)
@@ -28,6 +30,10 @@ const Home: NextPage = (data:Object) => {
   const handleInvoiceButton = (index:number) => {
     setInvoiceOpen(!(index == invoiceIndex))
     setInvoiceIndex((index == invoiceIndex)?-1:index)
+  }
+
+  const generateInvoice = (name: string) => {
+    Router.push(`/generate?name=${name}`, undefined, {shallow: false})
   }
 
   return (
@@ -44,7 +50,7 @@ const Home: NextPage = (data:Object) => {
             <div className="text-input-section">
               <label className={`placeholder ${inputActive?'placeholder-active':''}`} htmlFor="number" placeholder="Enter Name">Enter Name</label>
               <input type="text" name="number" required value={inputValue} onChange={(event) => handleValue(event.target.value)}/>
-              <button>Generate Invoice</button>
+              <button onClick={() => generateInvoice(inputValue)}>Generate Invoice</button>
             </div>
           </div>
           <div className="side-image">
